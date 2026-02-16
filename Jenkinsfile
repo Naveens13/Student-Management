@@ -48,7 +48,7 @@ pipeline {
                 sh '''
                     git config --global user.email "naveenbabu1531@gmail.com"
                     git config --global user.name "Naveen Babu"
-                    # git config --global --add safe.directory $WORKSPACE
+                    git config --global --add safe.directory $WORKSPACE
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s|image: naveen1531/student-management:.*|image: naveen1531/student-management:${BUILD_NUMBER}|g" Kubernetes_deployment/app_dplyt.yaml
                     git add student-management-deployment.yaml
