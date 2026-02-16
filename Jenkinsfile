@@ -51,7 +51,8 @@ pipeline {
                     git config --global --add safe.directory $WORKSPACE
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s|image: naveen1531/student-management:.*|image: naveen1531/student-management:${BUILD_NUMBER}|g" Kubernetes_deployment/app_dplyt.yaml
-                    git add student-management-deployment.yaml
+		    cat Kubernetes_deployment/app_dplyt.yaml
+                    git add Kubernetes_deployment/app_dplyt.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
