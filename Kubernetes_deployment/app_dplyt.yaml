@@ -20,7 +20,7 @@ spec:
         app: student_management
     spec:
       containers:
-      - image: naveen1531/student-management:1
+      - image: naveen1531/student-management:10
         name: student_management
         ports:
         - containerPort: 8080
